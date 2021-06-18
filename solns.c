@@ -1,34 +1,29 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
 
-int max(int arr[], int n){ 
-  int t=0;
-   for(int i=0;i<n;i++){
-   arr[i+1]=t;
-   if(arr[i]>arr[i+1]){
-      arr[i+1]=arr[i];
-      arr[i]=t;
-      }
-    else{
-     continue;
-     }  
-   }
-   return arr[n-1];
+int max(int num[], int n)
+{
+    int max=num[0]; 
+    for(int i=0;i<n;i++)
+    {
+        if(num[i]>max)
+        {
+            max=num[i];
+        }
+    }
+    return max;
 }
-
-int min(int arr[], int n){ 
-  int t=0;
-   for(int i=0;i<n;i++){
-   arr[i+1]=t;
-   if(arr[i]>arr[i+1]){
-      arr[i+1]=arr[i];
-      arr[i]=t;
-      }
-    else{
-     continue;
-     }  
-   }
-   return arr[0];
+int min(int num[], int n)
+{
+    int min =num[0];
+    for(int i=0;i<n;i++)
+    {
+        if(num[i]<min)
+        {
+            min=num[i];
+        }
+    }
+    return min;
 }
 
 float average(int arr[], int n)
@@ -64,10 +59,10 @@ int mode(int num[], int n)
 int factors(int num, int f[])
 {
     int n=num;
-     int x=0;
+     int i=0;
     int prime[]={2,3,5,7,9,11,13,17,19};
     int p=(int)(sizeof(prime)/sizeof(int));
-    for( int i=0;n!=1;i++)
+    for( ;n!=1;i++)
     {
         for(int j=0;j<n;j++)
         {
@@ -83,7 +78,7 @@ int factors(int num, int f[])
                 continue;
             }
         }
-      x=i;
+     
     }
-    return x;
+    return i;
 }
