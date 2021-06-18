@@ -1,7 +1,7 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
 
- int max(int arr[], int n){ 
+int max(int arr[], int n){ 
   int t=0;
    for(int i=0;i<n;i++){
    arr[i+1]=t;
@@ -34,12 +34,12 @@ int min(int arr[], int n){
 float average(int arr[], int n)
 {
     float sum=0;
-    float avg=0
+    float avg=0;
     for(int i=0;i<n;i++)
     {
         sum+=arr[i];
     }
-    avg=sum/size
+    avg=sum/n;
     return (avg);
 }
 
@@ -64,9 +64,9 @@ int mode(int num[], int n)
 int factors(int num, int f[])
 {
     int n=num;
-   
+     int x=0;
     int prime[]={2,3,5,7,9,11,13,17,19};
-    int n=(int)(sizeof(prime)/sizeof(int));
+    int p=(int)(sizeof(prime)/sizeof(int));
     for( int i=0;n!=1;i++)
     {
         for(int j=0;j<n;j++)
@@ -76,12 +76,14 @@ int factors(int num, int f[])
                 f[i]=prime[j];
                 n/=prime[j];
                 break;
+
             }
             else
             {
                 continue;
             }
         }
+      x=i;
     }
-    return i;
+    return x;
 }
